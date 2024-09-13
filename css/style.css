@@ -1,0 +1,53 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+html,body{font-family: "Noto Sans KR", sans-serif;}
+
+.container{width: 100%;display: flex;}
+.header{width: 400px;height: 100vh;background:linear-gradient(-45deg,palegoldenrod,lightsalmon);position: fixed;left: 0;top: 0;color: #fff;box-sizing: border-box; display: flex;flex-direction: column;justify-content: space-between;padding: 150px 0 150px 60px;transition: width 0.5s;}
+.headertitle>p:nth-child(1){font-size: 60px;}
+.headertitle>p:nth-child(1)::after{content: "";display: block;width: 150px;border-top: 2px solid #fff;margin: 20px 0;}
+.headertitle>p:nth-child(2){font-weight: lighter;color: rgba(255,255,255,0.7);}
+.sns{display: flex;}
+.sns>li{margin-right: 30px; font-weight: 600;font-size: 1.5vh; color: rgba(255,255,255,0.7);transition: all 0.3s;}
+.sns>li:hover{color: rgba(255,255,255,1);}
+.main{margin-left: 400px;width: calc(100% - 400px);min-height: 100vh; background-color: #efefef;box-sizing: border-box;padding: 20px;}
+.btn{display: flex;justify-content: flex-end;}
+.btn>li{margin-left: 10px; width: 100px;line-height: 26px; color: #aaa;font-size: 10px;background-color: #fff;border-radius:5px;text-align: center;box-shadow: 0 0 10px rgba(0,0,0,0.1);cursor: pointer;}
+.btn>li.on{background: linear-gradient(45deg,palegoldenrod,lightsalmon);color: #fff;box-shadow: 0 0 2px rgba(240,230,170,0.)}
+/* li안에 있는 on 이라는뜻 on을 여러군데 쓸수있으니*/
+
+.content{margin-top: 40px;display: flex;flex-wrap: wrap;justify-content: space-between;}
+.box{width: 20%;box-sizing: border-box;padding: 12px;}
+.inner{background-color: #fff;border-radius: 5px;padding: 15px;box-sizing: border-box;box-shadow: 0 0 10px rgba(0,0,0,0.2);}
+.inner>a{display: block;}
+.inner>a img{width: 100%;margin-bottom: 10px;}
+.inner>a p:nth-of-type(1){font-weight: 500;color: #555;}
+.inner>a p:nth-of-type(2){color: #666;font-size: 10px;}
+
+/* 미디어쿼리 */
+@media all and (max-width: 1200px){
+ .header{width: 100%;height: 80px;flex-direction: row;padding: 0;align-items: center;position: absolute;}
+ .headertitle>p{display: none;}
+ .headertitle::before{content: "DECODE LAB";display: block;margin-left: 20px; font-size: 30px;}
+ .sns span{display: none;}
+ .sns li{font-size: 17px;}
+ .main{margin: 0;width: 100%;padding-top: 100px;}
+}
+     /* box 사이즈 갯수 조절 */
+@media all and (max-width:1600px){
+ .box{width: 25%;}
+}
+@media all and (max-width:900px){
+ .box{width: 33.3%;}
+}
+@media all and (max-width:680px){
+ .box{width: 50%;}
+}
+@media all and (max-width:540px){
+ .box{width: 100%;}
+}
+
+@media all and (min-width:1201px) and (max-width:1600px){
+ .header{width: 350px;}
+ .main{width: calc(100% - 350px);margin-left: 350px;}
+}
